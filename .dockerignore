@@ -1,0 +1,25 @@
+# Dipasang di dalam image lewat composer install / npm ci di layer
+vendor
+node_modules
+frontend/node_modules
+frontend/dist
+
+# Riwayat Git dan metadata GitHub tidak dibutuhkan di dalam container.
+.git
+.gitignore
+.github
+
+# Rahasia lokal dan kunci aplikasi
+.env
+.env.backup
+frontend/.env
+
+# Database dan cache pengembangan lokal, dibuat ulang di dalam container.
+database/database.sqlite
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+bootstrap/cache/*.php
+
+
