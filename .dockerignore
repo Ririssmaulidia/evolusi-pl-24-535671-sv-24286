@@ -1,4 +1,5 @@
 # Dipasang di dalam image lewat composer install / npm ci di layer
+# terpisah, jadi tidak perlu (dan tidak boleh) ikut disalin.
 vendor
 node_modules
 frontend/node_modules
@@ -9,7 +10,8 @@ frontend/dist
 .gitignore
 .github
 
-# Rahasia lokal dan kunci aplikasi
+# Rahasia lokal dan kunci aplikasi: JANGAN pernah ikut ke dalam image,
+# sesuai peringatan slide 14 soal "menaruh rahasia di Dockerfile/image".
 .env
 .env.backup
 frontend/.env
@@ -22,4 +24,12 @@ storage/framework/views/*
 storage/logs/*
 bootstrap/cache/*.php
 
-
+# Berkas non-aplikasi yang tidak perlu ikut build context.
+.vscode
+.idea
+*.log
+README.md
+langkah_p4.md
+langkah_p5.md
+p4-files.zip
+p5-files.zip
